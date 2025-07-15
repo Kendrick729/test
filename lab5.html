@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sustainable Development Goals</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+ 
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f7f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+ 
+    header, footer {
+      width: 960px;
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 40px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+    }
+ 
+    header {
+      top: 0;
+    }
+ 
+    footer {
+      bottom: 0;
+      padding: 20px;
+    }
+ 
+    .container {
+      max-width: 960px;
+      width: 100%;
+      margin-top: 160px;
+      margin-bottom: 100px;
+      display: flex;
+      gap: 20px;
+      padding: 0 20px;
+    }
+ 
+    .sidebar {
+      width: 250px;
+      background-color: #00264d;
+      padding: 20px;
+      color: white;
+      flex-shrink: 0;
+    }
+ 
+    .sidebar h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #ffcc00;
+    }
+ 
+    .sidebar-item {
+      margin-bottom: 20px;
+    }
+ 
+    .sidebar-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+ 
+    .main-content {
+      flex: 1;
+      padding-left: 20px;
+    }
+ 
+    .sdg-grid {
+  columns: 2;
+  column-gap: 20px;
+}
+.sdg-card {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  font-weight: bold;
+  color: #003366;
+  transition: transform 0.3s;
+}
+ 
+    .sdg-card {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      font-weight: bold;
+      color: #003366;
+      transition: transform 0.3s;
+    }
+ 
+    .sdg-card:hover {
+      transform: translateY(-5px);
+    }
+	
+	.return-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff69b4;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ff69b4;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.return-btn:hover {
+  background-color: #e754a3;
+  transform: scale(1.05);
+}
+
+  </style>
+</head>
+<body>
+ 
+<header>
+  <h1>Sustainable Development Goals</h1>
+</header>
+ 
+<div class="container">
+  <aside class="sidebar">
+    <h2>Related Resources</h2>
+    <div class="sidebar-item">
+      <img src="C:\Users\202411611\Downloads\sdg3.png" alt="SDG 3">
+    </div>
+    <div class="sidebar-item">
+      <img src="C:\Users\202411611\Downloads\sdg5.png" alt="SDG 5">
+    </div>
+    <div class="sidebar-item">
+      <img src="C:\Users\202411611\Downloads\sdg1.jpg" alt="SDG 1">
+    </div>
+  </aside>
+ 
+  <main class="main-content">
+    <div class="sdg-grid">
+      <div class="sdg-card">Goal 1: No Poverty💰</div>
+      <div class="sdg-card">Goal 2: Zero Hunger🍽</div>
+      <div class="sdg-card">Goal 3: Good Health and Well-being👨🏿‍⚕️</div>
+      <div class="sdg-card">Goal 4: Quality Education👨🏿‍🎓</div>
+      <div class="sdg-card">Goal 5: Gender Equality🏳️‍🌈</div>
+      <div class="sdg-card">Goal 6: Clean Water and Sanitation💧</div>
+      <div class="sdg-card">Goal 7: Affordable and Clean Energy🔋⚡</div>
+      <div class="sdg-card">Goal 8: Decent Work and Economic Growth👮🏿‍♂️</div>
+      <div class="sdg-card">Goal 9: Industry, Innovation and Infrastructure🏗️</div>
+      <div class="sdg-card">Goal 10: Reduced Inequality🧑🏿‍🤝‍🧑🏽</div>
+      <div class="sdg-card">Goal 11: Sustainable Cities and Communities🌆</div>
+      <div class="sdg-card">Goal 12: Responsible Consumption and Production♻️</div>
+      <div class="sdg-card">Goal 13: Climate Action🌱</div>
+      <div class="sdg-card">Goal 14: Life Below Water🦈</div>
+      <div class="sdg-card">Goal 15: Life on Land🐆</div>
+      <div class="sdg-card">Goal 16: Peace, Justice and Strong Institutions☮️</div>
+      <div class="sdg-card">Goal 17: Partnerships for the Goals🫂</div>
+    </div>
+	<a href="myprojects.html" class="return-btn">RETURN</a>
+  </main>
+</div>
+ 
+<footer>
+  <p>&copy; 2025 SDG Webpage. All rights reserved.</p>
+</footer>
+ 
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Me Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffe6f0, #ffd6eb);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    form {
+      background-color: #fff0f5;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 420px;
+      transition: transform 0.3s ease;
+    }
+
+    form:hover {
+      transform: scale(1.02);
+    }
+
+    h2 {
+      text-align: center;
+      color: #cc3366;
+      margin-bottom: 25px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #cc3366;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ffb6c1;
+      border-radius: 8px;
+      font-size: 15px;
+      background-color: #fff;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #ff69b4;
+      outline: none;
+    }
+
+    .error {
+      border: 2px solid red;
+    }
+
+    button {
+      background-color: #ff69b4;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 10px;
+    }
+
+    button:hover {
+      background-color: #e0559e;
+    }
+
+    .return-btn {
+      background-color: #f8c1d9;
+      color: #cc3366;
+      font-weight: bold;
+    }
+
+    .return-btn:hover {
+      background-color: #f4a6c4;
+    }
+
+    .contact-info {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #cc3366;
+      background-color: #fff0f5;
+      padding: 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    #responseMsg {
+      text-align: center;
+      margin-top: 15px;
+      color: #cc3366;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="contactForm">
+    <h2>Contact Me</h2>
+
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name">
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email">
+
+    <label for="message">Message:</label>
+    <textarea name="message" id="message" rows="5"></textarea>
+
+    <button type="submit">Send Message</button>
+    <button type="button" class="return-btn" onclick="goBack()">Return</button>
+  </form>
+
+  <div id="responseMsg"></div>
+
+  <div class="contact-info">
+    You can reach me at: <strong>lorenzkendrickroque729@gmail.com</strong>
+  </div>
+
+  <script>
+    function validateContactForm() {
+      const form = document.getElementById('contactForm');
+      const fields = form.querySelectorAll('[name="name"], [name="email"], [name="message"]');
+      let allFilled = true;
+
+      fields.forEach(field => {
+        field.classList.remove("error");
+        if (field.value.trim() === "") {
+          field.classList.add("error");
+          allFilled = false;
+        }
+      });
+
+      if (!allFilled) {
+        alert("Please fill out all fields.");
+        return false;
+      }
+
+      return confirm("Do you want to send this message?");
+    }
+
+    function goBack() {
+      window.location.href = "myprojects.html";
+    }
+
+    
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+    const params = new URLSearchParams(data);
+
+    fetch("https://script.google.com/macros/s/AKfycbz05S8Wv34loviONfezaZyRsYvnPucW5o0RrVvqDCx60_XeNukFCXnSAYTL9SMS8kcbUg/exec", {
+      method: "POST",
+      body: params
+    })
+    .then(response => response.text())
+    .then(result => {
+      document.getElementById("responseMsg").innerText = "Message sent successfully!";
+      form.reset();
+    })
+    .catch(error => {
+      document.getElementById("responseMsg").innerText = "There was an error. Try again.";
+      console.error(error);
+    });
+  });
+</script>
+
+
+</body>
+</html>

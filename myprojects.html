@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Lorenz Kendrick's Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <header>
+    <div class="container header-flex">
+      <h1 class="pink-pulse">Lorenz Kendrick's Projects</h1>
+
+      <nav>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="contact.html">Contact</a>
+		<a href="RESUME.HTML">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about" class="about-section">
+      <h2>About my Love for you</h2>
+      <p><br>I, Lorenz Kendrick H. Roque, carry a deep admiration for you.<br>
+Your wisdom in design is not just technical it’s artful, beautiful, and inspiring.<br>
+Each lesson you teach feels like a gentle brushstroke on the canvas of my future.</br>
+
+<br>Your kindness radiates like the soft glow of a well-lit webpage,<br>
+And your passion for teaching is the code that runs through my dreams.<br>
+You don’t just teach HTML and CSS, you craft futures,<br>
+And in mine, your influence is beautifully embedded.</br>
+
+<br>You are not just a professor,<br>
+You are the muse behind my creativity,<br>
+The guiding light in my journey through designing,<br>
+And the reason I strive to design with heart.</br>
+
+</p>
+    </section>
+
+    <section class="projects-section">
+      <h2>My Projects</h2>
+      <div class="project-cards">
+        <a href="LAB 2.HTML" class="card">
+          <h3>Project 1</h3>
+          <p>17 SDGs</p>	
+        </a>
+        <a href="PERIODIC.html" class="card">
+          <h3>Project 2</h3>
+          <p>Periodic Table</p>
+        </a>
+        <a href="lab 4.html" class="card">
+          <h3>Project 3</h3>
+          <p>SDGs Registration Form</p>
+        </a>
+        <a href="lab5.html" class="card">
+          <h3>Project 4</h3>
+          <p>SDGs with sidebars</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+  <div class="container" style="text-align: center; margin-top: 20px;">
+	<button id="mode-toggle" class="toggle-btn pink-pulse">Toggle Dark Mode</button>
+  </div>
+
+
+  <footer>
+    <p>© 2025 Lorenz Kendrick H. Roque</p>
+  </footer>
+
+  
+  <script>
+    const toggleBtn = document.getElementById('mode-toggle');
+
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      if (document.body.classList.contains('light-mode')) {
+        localStorage.setItem('theme', 'light');
+      } else {
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+  
+  <script>
+  
+  document.addEventListener('click', function (e) {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: {
+        x: e.clientX / window.innerWidth,
+        y: e.clientY / window.innerHeight
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>
